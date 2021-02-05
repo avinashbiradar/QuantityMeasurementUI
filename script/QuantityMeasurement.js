@@ -81,6 +81,16 @@ showResultOne = (opt1) => {
     console.log("option1", opt1.value);
     optionTextOne = opt1.value;
 }
+showResultfour = (opt1) => {
+    $("#fromNumber").val(null);
+    console.log("option1", opt1.text);
+    optionTextOne = opt1.text;
+}
+showResultthree = (opt1) => {
+    $("#toNumber").val(null);
+    console.log("option1", opt2.value);
+    optionTextOne = opt2.value;
+}
 showResultTwo = (opt2) => {
     $("#toNumber").val(null);
     console.log(`option2 ${opt2.text}`);
@@ -98,6 +108,7 @@ converter = (valNum) => {
     }
 }
 LengthConverter = (valNum) => {
+    
     valNum = Number(valNum);
     console.log(optionTextOne, optionTextTwo);
     switch (optionTextOne) {
@@ -105,8 +116,10 @@ LengthConverter = (valNum) => {
             if (optionTextTwo == "Inch") {
                 value = valNum * 12;
             }
+            else if(optionTextOne=="Inch"){
+                valNum=value*12;
+            }
             else if (optionTextTwo == "Meter") {
-                ;
                 value = valNum / 3.2808;
             }
             else if (optionTextTwo == "Kilometre") {
@@ -281,8 +294,7 @@ LengthConverter = (valNum) => {
                 value = valNum * 1000;
             }
             break;
-        default: console.log("invalid input");
-            // $("#toNumber").val(null);
+        default:         
             break;
 
     }
@@ -315,12 +327,11 @@ TemperatureConverter = (valNum) => {
         }
             break;
 
-        default: console.log("invalid input");
+      default:      
             break;
 
     }
     $("#toNumber").val(value);
-
 }
 VolumeConverter = (valNum) => {
     valNum = Number(valNum);
@@ -348,7 +359,7 @@ VolumeConverter = (valNum) => {
         }
             break;
 
-        default: console.log("invalid input");
+        default:     
             break;
 
     }
